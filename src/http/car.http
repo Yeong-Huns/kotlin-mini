@@ -1,0 +1,4 @@
+### 전체 자동차 목록 반환
+GET http://localhost:8080/car
+
+

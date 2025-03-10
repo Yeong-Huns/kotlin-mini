@@ -1,13 +1,11 @@
-package com.yeonghun.kopringmini.global.config
+package com.yeonghun.kopringmini.global.config.audit
 
-import com.querydsl.jpa.impl.JPAQueryFactory
-import jakarta.persistence.EntityManager
-import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing
 
 /**
  *packageName    : com.yeonghun.kopringmini.global.config
- * fileName       : QueryDslConfig
+ * fileName       : JpaAuditingConfig
  * author         : Yeong-Huns
  * date           : 2025-03-10
  * ===========================================================
@@ -16,7 +14,5 @@ import org.springframework.context.annotation.Configuration
  * 2025-03-10        Yeong-Huns       최초 생성
  */
 @Configuration
-class QueryDslConfig ( private val em: EntityManager ) {
-    @Bean
-    fun querydsl(): JPAQueryFactory = JPAQueryFactory(em)
-}
+@EnableJpaAuditing
+class JpaAuditingConfig
