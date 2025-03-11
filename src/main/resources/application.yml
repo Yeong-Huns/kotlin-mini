@@ -1,6 +1,6 @@
 spring:
   profiles:
-    default: local #
+    default: mysql #
 
   datasource:
     url: jdbc:h2:mem:~/kotlin-mini
@@ -50,3 +50,11 @@ spring:
   sql:
     init:
       mode: never
+
+---
+# MySQL
+spring:
+  config:
+    activate:
+      on-profile: mysql
+    import: "classpath:application-mysql.yml"

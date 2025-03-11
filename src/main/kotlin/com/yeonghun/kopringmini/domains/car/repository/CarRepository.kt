@@ -16,8 +16,4 @@ import org.springframework.stereotype.Repository
  * 2025-03-11        Yeong-Huns       최초 생성
  */
 @Repository
-interface CarRepository: JpaRepository<Car, Long>{
-    fun findByRegistrationNumber(registrationNumber: String) : Car?
-    @Query("select max(c.registrationNumber) from Car c")
-    fun findNextRegistrationNumber() : String?
-}
+interface CarRepository: JpaRepository<Car, Long>

@@ -1,14 +1,15 @@
-package com.yeonghun.kopringmini.domains.car.domain
+package com.yeonghun.kopringmini.domains.user.domain
 
 import com.yeonghun.kopringmini.global.config.audit.BaseEntity
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jakarta.persistence.Table
 
 /**
- *packageName    : com.yeonghun.kopringmini.domains.car.domain
- * fileName       : Car
+ *packageName    : com.yeonghun.kopringmini.domains.user.domain
+ * fileName       : User
  * author         : Yeong-Huns
  * date           : 2025-03-11
  * ===========================================================
@@ -16,13 +17,11 @@ import jakarta.persistence.Id
  * -----------------------------------------------------------
  * 2025-03-11        Yeong-Huns       최초 생성
  */
+@Table(name = "user_info")
 @Entity
-class Car(
+class User (
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
-    val brand: String,
-    val model: String,
-    val color: String,
-    val modelYear: Int,
-    val price: Int
+    val firstname: String,
+    val lastname: String,
 ) : BaseEntity()

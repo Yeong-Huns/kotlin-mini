@@ -17,17 +17,15 @@ data class CreateCarRequest(
     val brand: String,
     val model: String,
     val color: String,
-    /*val registrationNumber: String,
-    val modelYear: Int,*/
+    val modelYear: Int,
     val price: Int
 ) {
-    fun toEntity(registrationNumber: String): Car {
+    fun toEntity(): Car {
         return Car(
             brand = this.brand,
             model = this.model,
             color = this.color,
-            registrationNumber = registrationNumber,
-            modelYear = LocalDate.now().year,
+            modelYear = this.modelYear,
             price = this.price
         )
     }

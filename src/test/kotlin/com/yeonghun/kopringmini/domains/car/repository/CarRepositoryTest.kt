@@ -29,7 +29,6 @@ class CarRepositoryTest (@Autowired val carRepository: CarRepository){
             brand = "BMW",
             model = "G80",
             color = "BLACK",
-            registrationNumber = "001",
             modelYear = 2025,
             price = 10000
         )
@@ -39,94 +38,5 @@ class CarRepositoryTest (@Autowired val carRepository: CarRepository){
         assertThat(savedCar)
             .extracting("brand", "model", "color", "registrationNumber")
             .containsExactlyInAnyOrder("BMW", "G80", "BLACK", "001");
-    }
-
-    @DisplayName("자동차의 등록번호로 차량을 조회하는데 성공한다.")
-    @Test
-    fun test2() {
-        //given
-        val registrationNumber = "001"
-        val car = Car(
-            brand = "BMW",
-            model = "G80",
-            color = "BLACK",
-            registrationNumber = registrationNumber,
-            modelYear = 2025,
-            price = 10000
-        )
-        carRepository.save(car)
-
-        //when
-        val findCar = carRepository.findByRegistrationNumber(registrationNumber)
-
-        //then
-        assertThat(findCar).isEqualTo(car)
-    }
-
-    @DisplayName("자동차의 등록번호로 차량을 조회하는데 실패한다.")
-    @Test
-    fun test3() {
-        //given
-        val registrationNumber = "001"
-        val car = Car(
-            brand = "BMW",
-            model = "G80",
-            color = "BLACK",
-            registrationNumber = registrationNumber,
-            modelYear = 2025,
-            price = 10000
-        )
-        carRepository.save(car)
-
-        //when
-        val findCar = carRepository.findByRegistrationNumber("002")
-
-        //then
-        assertThat(findCar).isNull()
-    }
-
-    @DisplayName("가장 최근의 registrationNumber 조회에 성공한다.")
-    @Test
-    fun test4() {
-        //given
-        val car1 = Car(
-            brand = "BMW",
-            model = "G80",
-            color = "BLACK",
-            registrationNumber = "004",
-            modelYear = 2025,
-            price = 10000
-        )
-        val car2 = Car(
-            brand = "BMW",
-            model = "G80",
-            color = "BLACK",
-            registrationNumber = "008",
-            modelYear = 2025,
-            price = 10000
-        )
-        val car3 = Car(
-            brand = "BMW",
-            model = "G80",
-            color = "BLACK",
-            registrationNumber = "007",
-            modelYear = 2025,
-            price = 10000
-        )
-        val car4 = Car(
-            brand = "BMW",
-            model = "G80",
-            color = "BLACK",
-            registrationNumber = "006",
-            modelYear = 2025,
-            price = 10000
-        )
-        carRepository.saveAll(listOf(car1,car2,car3,car4))
-
-        //when
-        val maxNumber = carRepository.findNextRegistrationNumber();
-
-        //then
-        assertThat(maxNumber).isEqualTo("008")
     }
 }
