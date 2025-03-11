@@ -3,5 +3,5 @@
 > [!NOTE]
 > * [미션 2] 테이블 설계하기
 
-![img.png](img.png)
+![img_1.png](img_1.png)
 
