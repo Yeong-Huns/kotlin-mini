@@ -1,6 +1,6 @@
 spring:
   profiles:
-    default: mysql #
+    default: local #
 
   datasource:
     url: jdbc:h2:mem:~/kotlin-mini
@@ -11,6 +11,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+    disable-swagger-default-url: true
 
 ---
 # LOCAL
