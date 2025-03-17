@@ -4,6 +4,7 @@ import com.yeonghun.kopringmini.domains.car.domain.Car
 import com.yeonghun.kopringmini.domains.car.dto.request.CreateCarRequest
 import com.yeonghun.kopringmini.domains.car.dto.response.CarResponse
 import com.yeonghun.kopringmini.domains.car.repository.CarRepository
+import com.yeonghun.kopringmini.global.util.findByIdOrThrow
 import com.yeonghun.kopringmini.global.util.throwExceptions
 import org.springframework.stereotype.Service
 
@@ -28,5 +29,7 @@ class CarService(private val carRepository: CarRepository) {
         carRepository.findAll()
             .map(CarResponse::fromCar)
 
-
+    fun findById(id: Long): CarResponse =
+        carRepository.findByIdOrThrow(id)
+            .let(CarResponse::fromCar)
 }

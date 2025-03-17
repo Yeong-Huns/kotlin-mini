@@ -32,8 +32,12 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-api:2.2.0")
     /* kotlin-logging */
     implementation("io.github.oshai:kotlin-logging-jvm:5.1.1")
-    // QueryDSL 의존성 추가
+    /* QueryDsl */
     implementation("com.querydsl:querydsl-jpa:5.1.0:jakarta")
+    /* Security */
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    testImplementation("org.springframework.security:spring-security-test")
+    /* kapt */
     kapt("com.querydsl:querydsl-apt:5.1.0:jakarta")
     kapt("jakarta.annotation:jakarta.annotation-api")
     kapt("jakarta.persistence:jakarta.persistence-api")
