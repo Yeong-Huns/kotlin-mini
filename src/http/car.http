@@ -1,4 +1,14 @@
+@hostname = localhost
+@port = 8080
+@username = user
+@password = password
+@id = 1
+
+
 ### 전체 자동차 목록 반환
-GET http://localhost:8080/car
+GET http://{{hostname}}:{{port}}/car
+Authorization: Basic dXNlcjpwYXNzd29yZA==
 
-
+### Car Id 를 통한 차량 조회
+GET http://{{hostname}}:{{port}}/car/{{id}}
+Authorization: Basic dXNlcjpwYXNzd29yZA==

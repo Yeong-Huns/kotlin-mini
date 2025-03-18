@@ -1,0 +1,20 @@
+@hostname = localhost
+@port = 8080
+@username = user
+@password = password
+@api = car-owner
+@user_id = 1
+@carOwner_id = 1
+
+
+### 차량 소유자 전체 조회
+GET http://{{hostname}}:{{port}}/{{api}}
+Authorization: Basic dXNlcjpwYXNzd29yZA==
+
+### 차량 소유 Id 로 등록된 차량과 차량 주인 조회
+GET http://{{hostname}}:{{port}}/{{api}}/{{carOwner_id}}
+Authorization: Basic dXNlcjpwYXNzd29yZA==
+
+### 특정 유저가 소유한 모든 차량 조회
+GET http://{{hostname}}:{{port}}/{{api}}/{{user_id}}
+Authorization: Basic dXNlcjpwYXNzd29yZA==

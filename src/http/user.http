@@ -1,0 +1,16 @@
+@hostname = localhost
+@port = 8080
+@username = user
+@password = password
+@api = user
+@user_id = 1
+
+
+
+### 전체 이용자 조회
+GET http://{{hostname}}:{{port}}/{{api}}
+Authorization: Basic dXNlcjpwYXNzd29yZA==
+
+### 유저 id 를 통한 유저 조회
+GET http://{{hostname}}:{{port}}/{{api}}/{{user_id}}
+Authorization: Basic dXNlcjpwYXNzd29yZA==
