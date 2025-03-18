@@ -20,7 +20,8 @@
 
 ### ✏️ `조회 REST API` 만들기
 ![img_2.png](img_2.png)
+> `swagger(경로 = /swagger-ui)` 적용 
+
 
 #### `+추가`
-> 일단 `InmemoryUserDetailManager` 를 이용하여 간단하게 `spring security` 적용 ...
-> 다음 미션엔 완성(예정..?)
+> 일단 `InmemoryUserDetailManager` 를 이용하여 간단하게 `spring security` 적용 (id = 'user', password = 'password')...
